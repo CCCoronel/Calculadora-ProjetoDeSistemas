@@ -4,10 +4,10 @@ import controller.*;
 
 
 public class Menu {
+    double a, b;
     public void exibirMenu() {
         Scanner scanner = new Scanner(System.in);
         int opcao = -1;
-        double result;
         while (opcao != 0) {
             System.out.println("=== Calculadora ===");
             System.out.println("1. Somar");
@@ -22,28 +22,40 @@ public class Menu {
             switch (opcao) {
                 case 1:
                     System.out.println("Você escolheu Somar.");   
-                    Soma soma = new Soma();
-                    result = soma.somar();
-                    System.out.println("Resultado: " + result);
+                    scanner = new Scanner(System.in);
+                    System.out.println("Digite o primeiro valor: ");
+                    a = scanner.nextDouble();
+                    System.out.println("Digite o segundo valor: ");
+                    b = scanner.nextDouble();
+                    System.out.println("Resultado: " + Controlador.calcular("soma", a, b));
                     break;
 
                 case 2:
                     System.out.println("Você escolheu Subtrair.");
-                    Subtrair subtrair = new Subtrair();
-                    result = subtrair.subtrair();
-                    System.out.println("Resultado: " + result);
+                    scanner = new Scanner(System.in);
+                    System.out.println("Digite o primeiro valor: ");
+                    a = scanner.nextDouble();
+                    System.out.println("Digite o segundo valor: ");
+                    b = scanner.nextDouble();
+                    System.out.println("Resultado: " + Controlador.calcular("subtracao", a, b));
                     break;
                 case 3:
                     System.out.println("Você escolheu Multiplicar.");
-                    Multiplicar multiplicar = new Multiplicar();
-                    result = multiplicar.multiplicar();
-                    System.out.println("Resultado: " + result);
+                    scanner = new Scanner(System.in);
+                    System.out.println("Digite o primeiro valor: ");
+                    a = scanner.nextDouble();
+                    System.out.println("Digite o segundo valor: ");
+                    b = scanner.nextDouble();
+                    System.out.println("Resultado: " + Controlador.calcular("multiplicacao", a, b));
                     break;
                 case 4:
                     System.out.println("Você escolheu Dividir.");
-                    Dividir dividir = new Dividir();
-                    result = dividir.dividir();
-                    System.err.println("Resultado: " + result);
+                    scanner = new Scanner(System.in);
+                    System.out.println("Digite o primeiro valor: ");
+                    a = scanner.nextDouble();
+                    System.out.println("Digite o segundo valor: ");
+                    b = scanner.nextDouble();
+                    System.out.println("Resultado: " + Controlador.calcular("divisao", a, b));
                     break;
                 case 0:
                     System.out.println("Saindo...");
